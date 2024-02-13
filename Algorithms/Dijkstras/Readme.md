@@ -1,6 +1,7 @@
-# g - adjacency list of weighted graph
-# n - the number of nodes in the graph
-# s - the index of the starting node
+g - adjacency list of weighted graph
+n - the number of nodes in the graph
+s - the index of the starting node
+
 function dijkstra(g, n, s):
 
     vis = [false, false, ..., false] # size n

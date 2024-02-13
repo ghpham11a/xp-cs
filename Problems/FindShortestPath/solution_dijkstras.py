@@ -20,10 +20,10 @@ def dijkstras(graph, src_node):
     distances[src_node] = 0
 
     for node in range(graph.size):
-        heapq.heappush(pq, (src_node, distances[node]))
+        heapq.heappush(pq, (distances[node], src_node))
 
     while pq:
-        src, src_distance = heapq.heappop(pq)
+        src_distance, src = heapq.heappop(pq)
 
         for dst, to_dst_weight in graph.adjacency_list[src]:
             new_weight = distances[src] + to_dst_weight
@@ -31,7 +31,7 @@ def dijkstras(graph, src_node):
             if new_weight < distances[dst]:
                 prev_nodes[dst] = src
                 distances[dst] = new_weight
-                heapq.heappush(pq, (dst, new_weight))
+                heapq.heappush(pq, (new_weight, dst))
 
     return (distances, prev_nodes)
 
