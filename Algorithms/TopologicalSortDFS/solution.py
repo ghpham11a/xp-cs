@@ -25,11 +25,11 @@ def topological_sort(graph):
 
     for node in range(graph.size):
         if node not in markers:
-            dfs(node, graph, output, markers)
+            topological_sort_dfs(node, graph, output, markers)
 
     return output[::-1]
 
-def dfs(node, graph, output, markers):
+def topological_sort_dfs(node, graph, output, markers):
 
     if markers[node] == Marker.PERMANENT:
         return
@@ -40,7 +40,7 @@ def dfs(node, graph, output, markers):
     markers[node] = Marker.TEMPORARY
 
     for neighbor in graph.adjacency_list[node]:
-        dfs(neighbor, graph, output, markers)
+        topological_sort_dfs(neighbor, graph, output, markers)
 
     markers[node] = Marker.PERMANENT
     output.append(node)

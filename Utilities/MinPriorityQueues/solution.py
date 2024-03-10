@@ -14,6 +14,7 @@ output = []
 while pq:
     # Remove to priority queue
     data = heapq.heappop(pq)
+    
     output.append(data)
 
 assert(output == [(1, 'DATA'), (2, 'DATA'), (3, 'DATA'), (4, 'DATA'), (5, 'DATA')])
