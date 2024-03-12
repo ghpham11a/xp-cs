@@ -7,13 +7,13 @@ class UndirectedGraph(object):
         self.adjacency_list = [[] for _ in range(size)]
 
     def add_edge(self, u, v):
-        self.graph[u].append(v)
-        self.graph[v].append(u)
+        self.adjacency_list[u].append(v)
+        self.adjacency_list[v].append(u)
 
 def bfs(graph, node):
 
     output = []
-    visited = [False] * len(graph.size)
+    visited = [False] * graph.size
     queue = deque()
 
     queue.appendleft(node)
@@ -24,7 +24,7 @@ def bfs(graph, node):
         curr_node = queue.pop()
         output.append(curr_node)
 
-        for neighbor in graph[node]:
+        for neighbor in graph.adjacency_list[node]:
             if visited[neighbor] == False:
                 queue.appendleft(neighbor)
                 visited[neighbor] = True
@@ -32,7 +32,7 @@ def bfs(graph, node):
     return output
 
 
-graph = UndirectedGraph()
+graph = UndirectedGraph(4)
 graph.add_edge(0, 1)
 graph.add_edge(0, 2)
 graph.add_edge(1, 2)

@@ -1,6 +1,6 @@
 class Solution:
     
-    def two_city_sched_cost(self, costs: List[List[int]]) -> int:
+    def two_city_sched_cost(self, costs):
 
         diffs  = []
         for c1, c2 in costs:

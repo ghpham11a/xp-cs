@@ -9,7 +9,7 @@ func binarySearch(target int, nums []int) int {
     hi := len(nums) - 1
 
     for lo <= hi {
-        mid := lo + (hi-lo) / 2
+        mid := lo + (hi - lo) / 2
 
         if nums[mid] == target {
             return mid
