@@ -1,3 +1,4 @@
+import math
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, val=0, left=None, right=None):
@@ -6,6 +7,7 @@
 #         self.right = right
 
 class Solution:
+    
     def is_valid_bst(self, root):
         return self.dfs(root)
         

@@ -1,6 +1,6 @@
 class Solution:
 
-    def alien_rrder(self, words):
+    def alien_order(self, words):
 
         graph = {}
 
